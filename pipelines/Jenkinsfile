@@ -17,7 +17,7 @@ pipeline {
 
         stage('Load Config') {
             steps {
-                container('infra')
+                container('infra') {
                     script {
                         def cfg = envConfig(env.ENV)
                         cfg.each { k, v ->
@@ -32,10 +32,10 @@ pipeline {
             steps {
                 container('infra') {
                     sh '''
-                    echo "AWS_REGION=$AWS_REGION"
-                    echo "CLUSTER=$CLUSTER"
+                        echo "AWS_REGION=$AWS_REGION"
+                        echo "CLUSTER=$CLUSTER"
                     '''
-                
+                }
             }
         }
     }
