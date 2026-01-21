@@ -36,8 +36,8 @@ spec:
                     '''
                 }
             }
-        },
-        stage('Verify Container -1') {
+        }
+        stage('Verify Container 1') {
             steps {
                 container('infra') {
                     sh '''
