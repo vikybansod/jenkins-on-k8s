@@ -36,6 +36,22 @@ spec:
                     '''
                 }
             }
+        },
+        stage('Verify Container -1') {
+            steps {
+                container('infra') {
+                    sh '''
+                        echo "Running on Kubernetes agent"
+                        echo "Container name: infra"
+                        echo "OS details:"
+                        ls -lrt /
+                        echo "Current user:"
+                        whoami
+                        echo "Workspace:"
+                        pwd
+                    '''
+                }
+            }
         }
     }
 }
