@@ -1,22 +1,8 @@
 pipeline {
     agent {
         kubernetes {
-            label 'infra-agent'
+            label 'infra'
             defaultContainer 'infra'
-            yaml """
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    role: infra
-spec:
-  containers:
-    - name: infra
-      image: ubuntu:noble
-      command:
-        - cat
-      tty: true
-"""
         }
     }
 
