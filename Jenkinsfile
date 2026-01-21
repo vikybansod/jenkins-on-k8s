@@ -1,9 +1,29 @@
+@Library('jenkins-shared-lib') _
+
 pipeline {
     agent {
         kubernetes {
-            label 'infra'
+            label 'infra-agent'
             defaultContainer 'infra'
+            yaml """
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    role: infra
+spec:
+  containers:
+    - name: infra
+      image: ${infra_image}:${infra_tag}
+      command:  
+        - cat
+      tty: true
+"""
         }
+    }
+
+    environment {
+        ENV = 'uat'
     }
 
     stages {
@@ -11,14 +31,8 @@ pipeline {
             steps {
                 container('infra') {
                     sh '''
-                        echo "Running on Kubernetes agent"
-                        echo "Container name: infra"
-                        echo "OS details:"
-                        cat /etc/os-release
-                        echo "Current user:"
-                        whoami
-                        echo "Workspace:"
-                        pwd
+                        echo "${AWS_REGION}"
+                        echo "${CLUSTER}"
                     '''
                 }
             }
