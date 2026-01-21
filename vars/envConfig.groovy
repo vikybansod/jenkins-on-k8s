@@ -3,8 +3,8 @@ def call(String env) {
         dev: [
             AWS_REGION: 'ap-south-1',
             CLUSTER: 'dev-cluster',
-            infra_image: 'ubuntu',
-            infra_tag: 'noble'
+            IMAGE_NAME: 'ubuntu',
+            IMAGE_TAG: 'noble'
         ],
         uat: [
             AWS_REGION: 'ap-south-1',
