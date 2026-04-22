@@ -1,0 +1,79 @@
+--- Copying files at Wed Apr 22 12:40:21 UTC 2026
+INSTALLED plugins/workflow-support.jpi : 1015.v785e5a_b_b_8b_22
+INSTALLED plugins/workflow-step-api.jpi : 724.v538c2362b_dfb_
+INSTALLED plugins/workflow-scm-step.jpi : 466.va_d69e602552b_
+INSTALLED plugins/workflow-multibranch.jpi : 821.vc3b_4ea_780798
+INSTALLED plugins/workflow-job.jpi : 1571.vb_423c255d6d9
+INSTALLED plugins/workflow-durable-task-step.jpi : 1475.ved562f6ec8b_3
+INSTALLED plugins/workflow-cps.jpi : 4285.v8df38f05c3c5
+INSTALLED plugins/workflow-basic-steps.jpi : 1098.v808b_fd7f8cf4
+INSTALLED plugins/workflow-api.jpi : 1413.v2ff1a_5e720fa_
+INSTALLED plugins/workflow-aggregator.jpi : 608.v67378e9d3db_1
+INSTALLED plugins/woodstox-core-api.jpi : 7.1.1-1.v4d297985f397
+INSTALLED plugins/variant.jpi : 70.va_d9f17f859e0
+INSTALLED plugins/structs.jpi : 362.va_b_695ef4fdf9
+INSTALLED plugins/ssh-credentials.jpi : 372.va_250881b_08cd
+INSTALLED plugins/snakeyaml-api.jpi : 2.5-149.v72471e9c6371
+INSTALLED plugins/script-security.jpi : 1399.ve6a_66547f6e1
+INSTALLED plugins/scm-api.jpi : 728.vc30dcf7a_0df5
+INSTALLED plugins/prism-api.jpi : 1.30.0-720.v1eb_7496954b_3
+INSTALLED plugins/plugin-util-api.jpi : 7.1330.v47b_46ee2047a_
+INSTALLED plugins/plain-credentials.jpi : 199.v9f8e1f741799
+INSTALLED plugins/pipeline-stage-tags-metadata.jpi : 2.2277.v00573e73ddf1
+INSTALLED plugins/pipeline-stage-step.jpi : 345.va_96187909426
+INSTALLED plugins/pipeline-model-extensions.jpi : 2.2277.v00573e73ddf1
+INSTALLED plugins/pipeline-model-definition.jpi : 2.2277.v00573e73ddf1
+INSTALLED plugins/pipeline-model-api.jpi : 2.2277.v00573e73ddf1
+INSTALLED plugins/pipeline-milestone-step.jpi : 152.v6e22b_8cfc66c
+INSTALLED plugins/pipeline-input-step.jpi : 551.vdff487c5998c
+INSTALLED plugins/pipeline-groovy-lib.jpi : 797.v90ea_a_9b_e45a_0
+INSTALLED plugins/pipeline-build-step.jpi : 584.vdb_a_2cc3a_d07a_
+INSTALLED plugins/okhttp-api.jpi : 5.3.2-200.vedb_720a_cf1f8
+INSTALLED plugins/mina-sshd-api-core.jpi : 2.16.0-167.va_269f38cc024
+INSTALLED plugins/mina-sshd-api-common.jpi : 2.16.0-167.va_269f38cc024
+INSTALLED plugins/metrics.jpi : 4.2.37-494.v06f9a_939d33a_
+INSTALLED plugins/mailer.jpi : 534.v1b_36f5864073
+INSTALLED plugins/kubernetes.jpi : 4423.vb_59f230b_ce53
+INSTALLED plugins/kubernetes-credentials.jpi : 207.v492f58828b_ed
+INSTALLED plugins/kubernetes-client-api.jpi : 7.3.1-256.v788a_0b_787114
+INSTALLED plugins/json-api.jpi : 20251224-185.v0cc18490c62c
+INSTALLED plugins/joda-time-api.jpi : 2.14.1-187.vdf2def02b_8a_1
+INSTALLED plugins/jaxb.jpi : 2.3.9-143.v5979df3304e6
+INSTALLED plugins/javax-activation-api.jpi : 1.2.0-8
+INSTALLED plugins/jakarta-xml-bind-api.jpi : 4.0.6-12.vb_1833c1231d3
+INSTALLED plugins/jakarta-mail-api.jpi : 2.1.5-1
+INSTALLED plugins/jakarta-activation-api.jpi : 2.1.4-1
+INSTALLED plugins/jackson2-api.jpi : 2.21.2-436.v29efdb_7418ff
+INSTALLED plugins/jackson-annotations2-api.jpi : 2.21-7.v4777a_f3a_a_d47
+INSTALLED plugins/ionicons-api.jpi : 94.vcc3065403257
+INSTALLED plugins/instance-identity.jpi : 203.v15e81a_1b_7a_38
+INSTALLED plugins/gson-api.jpi : 2.13.2-198.v45e4a_55d9b_a_a_
+INSTALLED plugins/git.jpi : 5.10.1
+INSTALLED plugins/git-client.jpi : 6.6.0
+INSTALLED plugins/font-awesome-api.jpi : 7.2.0-983.v3f63c34eddb_9
+INSTALLED plugins/durable-task.jpi : 664.v2b_e7a_dfff66c
+INSTALLED plugins/display-url-api.jpi : 2.217.va_6b_de84cc74b_
+INSTALLED plugins/credentials.jpi : 1502.v5c95e620ddfe
+INSTALLED plugins/credentials-binding.jpi : 719.v80e905ef14eb_
+INSTALLED plugins/configuration-as-code.jpi : 2074.va_57f83f7a_10b_
+INSTALLED plugins/commons-text-api.jpi : 1.15.0-218.va_61573470393
+INSTALLED plugins/commons-lang3-api.jpi : 3.20.0-109.ve43756e2d2b_4
+INSTALLED plugins/cloudbees-folder.jpi : 6.1100.ve9eed61d16c4
+INSTALLED plugins/caffeine-api.jpi : 3.2.3-194.v31a_b_f7a_b_5a_81
+INSTALLED plugins/branch-api.jpi : 2.1280.v0d4e5b_b_460ef
+INSTALLED plugins/bouncycastle-api.jpi : 2.30.1.84-291.v9f17b_21896e2
+INSTALLED plugins/bootstrap5-api.jpi : 5.3.8-1024.v127320880c60
+INSTALLED plugins/authentication-tokens.jpi : 1.144.v5ff4a_5ec5c33
+INSTALLED plugins/asm-api.jpi : 9.9.1-189.vb_5ef2964da_91
+INSTALLED plugins/apache-httpcomponents-client-4-api.jpi : 4.5.14-269.vfa_2321039a_83
+INSTALLED plugins/antisamy-markup-formatter.jpi : 173.v680e3a_b_69ff3
+--- Copied files finished at Wed Apr 22 12:40:25 UTC 2026
+--- Copying files at Wed Apr 22 17:43:53 UTC 2026
+--- Copied files finished at Wed Apr 22 17:43:54 UTC 2026
+--- Copying files at Wed Apr 22 18:30:31 UTC 2026
+--- Copied files finished at Wed Apr 22 18:30:32 UTC 2026
+--- Copying files at Wed Apr 22 18:46:20 UTC 2026
+--- Copied files finished at Wed Apr 22 18:46:21 UTC 2026
+--- Copying files at Wed Apr 22 19:32:18 UTC 2026
+SKIPPED plugins/configuration-as-code.jpi : Installed version (2077.v41f1011a_5110) has been manually upgraded from initial version (2074.va_57f83f7a_10b_)
+--- Copied files finished at Wed Apr 22 19:32:19 UTC 2026
