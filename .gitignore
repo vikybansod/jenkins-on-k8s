@@ -1,1 +1,2 @@
 data/jenkins-volume/credentials.xml
+data/jenkins-volume/**

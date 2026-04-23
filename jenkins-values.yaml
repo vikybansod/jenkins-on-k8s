@@ -524,16 +524,67 @@ controller:
 
     # If true, the init container deletes all the plugin config files and Jenkins Config as Code overwrites any existing configuration
     # -- Whether Jenkins Config as Code should overwrite any existing configuration
-    overwriteConfiguration: false
+    overwriteConfiguration: true
     # -- Remote URLs for configuration files.
     configUrls: []
     # - https://acme.org/jenkins.yaml
     # -- List of Jenkins Config as Code scripts
     configScripts:
       agents: |
-        {{ .Files.Get "./casc/agents.yaml" | indent 8 }}
-      # credentials: |
-      #   {{ .Files.Get "casc/credentials.yaml" | indent 8 }}
+        jenkins:
+          clouds:
+            - kubernetes:
+                name: "kubernetes"
+                namespace: "jenkins"
+                webSocket: true
+                jenkinsUrl: "http://jenkins.jenkins.svc.cluster.local:8080"
+
+                templates:
+                  - name: "infra-agent"
+                    label: "infra-agent"
+                    serviceAccount: "jenkins"
+
+                    containers:
+                      - name: "infra"
+                        image: "ubuntu:noble"
+                        command: "cat"
+                        ttyEnabled: true
+
+                  - name: "multi-tool-agent"
+                    label: "multi-tool-agent"
+
+                    containers:
+                      - name: "kubectl"
+                        image: "bitnami/kubectl:latest"
+                        command: "cat"
+                        ttyEnabled: true
+
+                      - name: "terraform"
+                        image: "hashicorp/terraform:latest"
+                        command: "cat"
+                        ttyEnabled: true
+      credentials: |-
+        credentials:
+          system:
+            domainCredentials:
+              - credentials:
+                  - usernamePassword:
+                      scope: GLOBAL
+                      id: "github-credentials"
+                      username: "test-user"
+                      password: "test-password"
+      unclassified: |-
+        unclassified:
+          globalLibraries:
+            libraries:
+              - name: "jenkins-shared-lib"
+                defaultVersion: "main"
+                retriever:
+                  modernSCM:
+                    scm:
+                      git:
+                        remote: "https://github.com/vikybansod/jenkins-on-k8s.git"
+          
     #  welcome-message: |
     #    jenkins:
     #      systemMessage: Welcome to our CI\CD server. This Jenkins is configured and managed 'as code'.
