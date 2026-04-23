@@ -529,7 +529,11 @@ controller:
     configUrls: []
     # - https://acme.org/jenkins.yaml
     # -- List of Jenkins Config as Code scripts
-    configScripts: {}
+    configScripts:
+      agents: |
+        {{ .Files.Get "./casc/agents.yaml" | indent 8 }}
+      # credentials: |
+      #   {{ .Files.Get "casc/credentials.yaml" | indent 8 }}
     #  welcome-message: |
     #    jenkins:
     #      systemMessage: Welcome to our CI\CD server. This Jenkins is configured and managed 'as code'.

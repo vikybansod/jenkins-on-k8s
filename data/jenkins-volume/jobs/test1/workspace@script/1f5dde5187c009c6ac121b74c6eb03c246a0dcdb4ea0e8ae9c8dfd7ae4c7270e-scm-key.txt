@@ -1,1 +1,0 @@
-git https://github.com/vikybansod/jenkins-on-k8s.git

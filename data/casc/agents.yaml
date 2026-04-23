@@ -1,0 +1,31 @@
+jenkins:
+  clouds:
+    - kubernetes:
+        name: "kubernetes"
+        namespace: "jenkins"
+        jenkinsUrl: "http://jenkins.jenkins.svc.cluster.local:8080"
+
+        templates:
+          - name: "infra-agent"
+            label: "infra-agent"
+            serviceAccount: "jenkins"
+
+            containers:
+              - name: "infra"
+                image: "ubuntu:noble"
+                command: "cat"
+                ttyEnabled: true
+
+          - name: "multi-tool-agent"
+            label: "multi-tool-agent"
+
+            containers:
+              - name: "kubectl"
+                image: "bitnami/kubectl:latest"
+                command: "cat"
+                ttyEnabled: true
+
+              - name: "terraform"
+                image: "hashicorp/terraform:latest"
+                command: "cat"
+                ttyEnabled: true
