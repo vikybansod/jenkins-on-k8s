@@ -32,7 +32,7 @@ pipeline {
             steps {
                 container('infra') {
                     sh '''
-                        echo "AWS_REGION"
+                        echo "AWS"
                     '''
                 }
             }
