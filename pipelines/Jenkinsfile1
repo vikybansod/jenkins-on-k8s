@@ -1,0 +1,91 @@
+pipeline {
+
+    agent {
+        kubernetes {
+            label 'infra-agent'
+            defaultContainer 'infra'
+            workspaceVolume emptyDirWorkspaceVolume()
+        }
+    }
+
+    environment {
+        ENV = 'uat'
+        AWS_REGION = 'ap-south-1'
+    }
+
+    stages {
+
+        stage('Sanity Check') {
+            steps {
+                container('infra') {
+                    sh '''
+                        echo "=== SANITY CHECK ==="
+                        echo "User: $(whoami)"
+                        echo "Workspace: $(pwd)"
+                        echo "Files:"
+                        ls -lrt
+                    '''
+                }
+            }
+        }
+
+        stage('Check Tools') {
+            steps {
+                container('infra') {
+                    sh '''
+                        echo "=== TOOL CHECK ==="
+
+                        echo "Git:"
+                        git --version || echo "git not installed"
+
+                        echo "Curl:"
+                        curl --version || echo "curl not installed"
+
+                        echo "Kubectl:"
+                        kubectl version --client || echo "kubectl not installed"
+
+                        echo "Terraform:"
+                        terraform version || echo "terraform not installed"
+                    '''
+                }
+            }
+        }
+
+        stage('Environment Variables') {
+            steps {
+                container('infra') {
+                    sh '''
+                        echo "=== ENV VARS ==="
+                        echo "ENV=$ENV"
+                        echo "AWS_REGION=$AWS_REGION"
+                    '''
+                }
+            }
+        }
+
+        stage('Simple Git Clone Test') {
+            steps {
+                container('infra') {
+                    sh '''
+                        echo "=== GIT CLONE TEST ==="
+                        git clone https://github.com/git/git.git test-repo || echo "Clone failed"
+                        ls -lrt
+                    '''
+                }
+            }
+        }
+
+        stage('Final') {
+            steps {
+                echo "Pipeline executed successfully 🎉"
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleaning workspace..."
+            deleteDir()
+        }
+    }
+}
