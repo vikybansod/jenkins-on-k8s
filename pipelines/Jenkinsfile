@@ -4,6 +4,7 @@ pipeline {
 
     agent {
         kubernetes {
+            workspaceVolume emptyDirWorkspaceVolume()
             label 'infra-agent'
         }
     }
