@@ -1,0 +1,20 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.workflow.libs.GlobalLibraries plugin="pipeline-groovy-lib@797.v90ea_a_9b_e45a_0">
+  <libraries>
+    <org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+      <name>tst</name>
+      <retriever class="org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever">
+        <clone>true</clone>
+        <scm class="jenkins.plugins.git.GitSCMSource" plugin="git@5.10.1">
+          <id></id>
+          <remote>https://github.com/vikybansod/jenkins-on-k8s.git</remote>
+          <credentialsId>viky</credentialsId>
+          <traits/>
+        </scm>
+      </retriever>
+      <implicit>false</implicit>
+      <allowVersionOverride>true</allowVersionOverride>
+      <includeInChangesets>true</includeInChangesets>
+    </org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+  </libraries>
+</org.jenkinsci.plugins.workflow.libs.GlobalLibraries>

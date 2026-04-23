@@ -4,8 +4,7 @@ pipeline {
 
     agent {
         kubernetes {
-            label 'infra-agent'
-            defaultContainer 'infra'
+            label 'default'
         }
     }
 
